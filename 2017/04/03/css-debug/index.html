@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="html5," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="外观表现 placeholder属性设置的文字向上偏移的厉害(各移动浏览器经常出现) 解决方法： 1line-height:normal  body设置100%高度后，在移动浏览器里面可能会被底部的导航栏挡住 解决方法： 1document.documentElement.style.height = window.innerHeight + &amp;apos;px&amp;apos;    优化移动前端开发由">
+<meta name="keywords" content="html5">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动前端的一些坑解决方法（外观表现）与优化">
+<meta property="og:url" content="http://yoursite.com/2017/04/03/css-debug/index.html">
+<meta property="og:site_name" content="二少爷&#39;s Blog">
+<meta property="og:description" content="外观表现 placeholder属性设置的文字向上偏移的厉害(各移动浏览器经常出现) 解决方法： 1line-height:normal  body设置100%高度后，在移动浏览器里面可能会被底部的导航栏挡住 解决方法： 1document.documentElement.style.height = window.innerHeight + &amp;apos;px&amp;apos;    优化移动前端开发由">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-14T14:03:01.780Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动前端的一些坑解决方法（外观表现）与优化">
+<meta name="twitter:description" content="外观表现 placeholder属性设置的文字向上偏移的厉害(各移动浏览器经常出现) 解决方法： 1line-height:normal  body设置100%高度后，在移动浏览器里面可能会被底部的导航栏挡住 解决方法： 1document.documentElement.style.height = window.innerHeight + &amp;apos;px&amp;apos;    优化移动前端开发由">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/04/03/css-debug/"/>
+
+
+
+
+
+  <title>移动前端的一些坑解决方法（外观表现）与优化 | 二少爷's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">二少爷's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-photos">
+          <a href="/photos/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-picture-o"></i> <br />
+            
+            相册
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/03/css-debug/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ershaoye">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="二少爷's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">移动前端的一些坑解决方法（外观表现）与优化</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-03T17:35:46+08:00">
+                2017-04-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="外观表现"><a href="#外观表现" class="headerlink" title="外观表现"></a>外观表现</h2><ul>
+<li><p>placeholder属性设置的文字向上偏移的厉害(各移动浏览器经常出现)</p>
+<p>解决方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">line-height:normal</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>body设置100%高度后，在移动浏览器里面可能会被底部的导航栏挡住</p>
+<p>解决方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.documentElement.style.height = window.innerHeight + &apos;px&apos;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><br></p>
+<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p>移动前端开发由于是在手机上使用，需要考虑到网络信号较差和为用户的流量着想，性能和加载速度就是前端开发人员需要认真考虑的，PC的优化手段同样使用在移动端上，下面一起看看腾讯ISUX这篇文章是如何从CSS、JavaScript、http请求和硬件渲染方面做出优化的。</p>
+<p>概述</p>
+<ol>
+<li>PC优化手段在Mobile侧同样适用</li>
+<li>在Mobile侧我们提出三秒种渲染完成首屏指标</li>
+<li>基于第二点，首屏加载3秒完成或使用Loading</li>
+<li>基于联通3G网络平均338KB/s(2.71Mb/s)，所以首屏资源不应超过1014KB</li>
+<li>Mobile侧因手机配置原因，除加载外渲染速度也是优化重点</li>
+<li>基于第五点，要合理处理代码减少渲染损耗</li>
+<li>基于第二、第五点，所有影响首屏加载和渲染的代码应在处理逻辑中后置</li>
+<li>加载完成后用户交互使用时也需注意性能<br>优化指南</li>
+</ol>
+<p>[加载优化]</p>
+<p>加载过程是最为耗时的过程，可能会占到总耗时的80%时间，因此是优化的重点</p>
+<p>· 减少HTTP请求<br>因为手机浏览器同时响应请求为4个请求（Android支持4个，ios 5后可支持6个），所以要尽量减少页面的请求数，首次加载同时请求数不能超过4个</p>
+<p>a) 合并CSS、JavaScript</p>
+<p>b) 合并小图片，使用雪碧图</p>
+<p>· 缓存<br>使用缓存可以减少向服务器的请求数，节省加载时间，所以所有静态资源都要在服务器端设置缓存，并且尽量使用长Cache（长Cache资源的更新可使用时间戳）</p>
+<p>a) 缓存一切可缓存的资源</p>
+<p>b) 使用长Cache（使用时间戳更新Cache）</p>
+<p>c) 使用外联式引用CSS、JavaScript</p>
+<p>· 压缩HTML、CSS、JavaScript<br>减少资源大小可以加快网页显示速度，所以要对HTML、CSS、JavaScript等进行代码压缩，并在服务器端设置GZip</p>
+<p>a) 压缩（例如，多余的空格、换行符和缩进）</p>
+<p>b) 启用GZip</p>
+<p>· 无阻塞<br>写在HTML头部的JavaScript（无异步），和写在HTML标签中的Style会阻塞页面的渲染，因此CSS放在页面头部并使用Link方式引入，避免在HTML标签中写Style，JavaScript放在页面尾</p>
+<p>部或使用异步方式加载</p>
+<p>· 使用首屏加载<br>首屏的快速显示，可以大大提升用户对页面速度的感知，因此应尽量针对首屏的快速显示做优化</p>
+<p>· 按需加载<br>将不影响首屏的资源和当前屏幕资源不用的资源放到用户需要时才加载，可以大大提升重要资源的显示速度和降低总体流量<br>PS：按需加载会导致大量重绘，影响渲染性能</p>
+<p>a) LazyLoad</p>
+<p>b) 滚屏加载</p>
+<p>c) 通过Media Query加载</p>
+<p>· 预加载<br>大型重资源页面（如游戏）可使用增加Loading的方法，资源加载完成后再显示页面。但Loading时间过长，会造成用户流失<br>对用户行为分析，可以在当前页加载下一页资源，提升速度</p>
+<p>a) 可感知Loading(如进入空间游戏的Loading)</p>
+<p>b) 不可感知的Loading（如提前加载下一页）</p>
+<p>· 压缩图片<br>图片是最占流量的资源，因此尽量避免使用他，使用时选择最合适的格式（实现需求的前提下，以大小判断），合适的大小，然后使用智图压缩，同时在代码中用Srcset来按需显示<br>PS：过度压缩图片大小影响图片显示效果</p>
+<p>a) 使用智图（ <a href="http://zhitu.tencent.com/" target="_blank" rel="noopener">http://zhitu.tencent.com/</a> ）</p>
+<p>b) 使用其它方式代替图片(1. 使用css3 2. 使用SVG 3. 使用IconFont)</p>
+<p>c) 使用Srcset</p>
+<p>d) 选择合适的图片(1. webP优于JPG 2. PNG8优于GIF)</p>
+<p>e) 选择合适的大小（1. 首次加载不大于1014KB 2. 不宽于640（基于手机屏幕一般宽度））</p>
+<p>· 减少Cookie<br>Cookie会影响加载速度，所以静态资源域名不使用Cookie</p>
+<p>· 避免重定向<br>重定向会影响加载速度，所以在服务器正确设置避免重定向</p>
+<p>· 异步加载第三方资源<br>第三方资源不可控会影响页面的加载和显示，因此要异步加载第三方资源</p>
+<p>[脚本执行优化]</p>
+<p>脚本处理不当会阻塞页面加载、渲染，因此在使用时需当注意</p>
+<p>· CSS写在头部，JavaScript写在尾部或异步</p>
+<p>· 避免图片和iframe等的空Src<br>空Src会重新加载当前页面，影响速度和效率</p>
+<p>· 尽量避免重设图片大小<br>重设图片大小是指在页面、CSS、JavaScript等中多次重置图片大小，多次重设图片大小会引发图片的多次重绘，影响性能</p>
+<p>· 图片尽量避免使用DataURL<br>DataURL图片没有使用图片的压缩算法文件会变大，并且要解码后再渲染，加载慢耗时长</p>
+<p>[CSS优化]</p>
+<p>· 尽量避免写在HTML标签中写Style属性</p>
+<p>· 避免CSS表达式<br>CSS表达式的执行需跳出CSS树的渲染，因此请避免CSS表达式</p>
+<p>· 移除空的CSS规则<br>空的CSS规则增加了CSS文件的大小，且影响CSS树的执行，所以需移除空的CSS规则</p>
+<p>· 正确使用Display的属性<br>Display属性会影响页面的渲染，因此请合理使用</p>
+<p>a) display:inline后不应该再使用width、height、margin、padding以及float</p>
+<p>b) display:inline-block后不应该再使用float</p>
+<p>c) display:block后不应该再使用vertical-align</p>
+<p>d) display:table-*后不应该再使用margin或者float</p>
+<p>· 不滥用Float<br>Float在渲染时计算量比较大，尽量减少使用</p>
+<p>· 不滥用web字体<br>Web字体需要下载，解析，重绘当前页面，尽量减少使用</p>
+<p>· 不声明过多的Font-size<br>过多的Font-size引发CSS树的效率</p>
+<p>· 值为0时不需要任何单位<br>为了浏览器的兼容性和性能，值为0时不要带单位</p>
+<p>· 标准化各种浏览器前缀</p>
+<p>a) 无前缀应放在最后</p>
+<p>b) CSS动画只用 （-webkit- 无前缀）两种即可</p>
+<p>c) 其它前缀为 -webkit- -moz- -ms- 无前缀 四种，（-o-Opera浏览器改用blink内核，所以淘汰）</p>
+<p>· 避免让选择符看起来像正则表达式<br>高级选择器执行耗时长且不易读懂，避免使用</p>
+<p>[JavaScript执行优化]</p>
+<p>· 减少重绘和回流</p>
+<p>a) 避免不必要的Dom操作</p>
+<p>b) 尽量改变Class而不是Style，使用classList代替className</p>
+<p>c) 避免使用document.write</p>
+<p>d) 减少drawImage</p>
+<p>· 缓存Dom选择与计算<br>每次Dom选择都要计算，缓存他</p>
+<p>· 缓存列表.length<br>每次.length都要计算，用一个变量保存这个值</p>
+<p>· 尽量使用事件代理，避免批量绑定事件</p>
+<p>· 尽量使用ID选择器<br>ID选择器是最快的</p>
+<p>· TOUCH事件优化<br>使用touchstart、touchend代替click，因快影响速度快。但应注意Touch响应过快，易引发误操作</p>
+<p>[渲染优化]</p>
+<p>· HTML使用Viewport<br>Viewport可以加速页面的渲染，请使用以下代码</p>
+<meta name="”viewport”" content="”width=device-width," initial-scale="1″">
+
+<p>· 减少Dom节点<br>Dom节点太多影响页面的渲染，应尽量减少Dom节点</p>
+<p>· 动画优化</p>
+<p>a) 尽量使用CSS3动画</p>
+<p>b) 合理使用requestAnimationFrame动画代替setTimeout</p>
+<p>c) 适当使用Canvas动画 5个元素以内使用css动画，5个以上使用Canvas动画（iOS8可使用webGL）</p>
+<p>· 高频事件优化<br>Touchmove、Scroll 事件可导致多次渲染</p>
+<p>a) 使用requestAnimationFrame监听帧变化，使得在正确的时间进行渲染</p>
+<p>b) 增加响应变化的时间间隔，减少重绘次数</p>
+<p>· GPU加速<br>CSS中以下属性（CSS3 transitions、CSS3 3D transforms、Opacity、Canvas、WebGL、Video）来触发GPU渲染，请合理使用<br>PS：过渡使用会引发手机过耗电增加</p>
+<blockquote>
+<p>著作权归作者所有。商业转载请联系作者获得授权,非商业转载请注明出处。<br>链接:<a href="http://caibaojian.com/mobile-performance.html" target="_blank" rel="noopener">http://caibaojian.com/mobile-performance.html</a><br>来源:<a href="http://caibaojian.com" target="_blank" rel="noopener">http://caibaojian.com</a></p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/html5/" rel="tag"># html5</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/30/css-flexbox-ios10/" rel="next" title="flexbox遭遇text-overflow:hidden失效问题">
+                <i class="fa fa-chevron-left"></i> flexbox遭遇text-overflow:hidden失效问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/03/html5-head-meta/" rel="prev" title="移动前端头部标签(HTML5 head meta)">
+                移动前端头部标签(HTML5 head meta) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/images/avatar.png"
+                alt="ershaoye" />
+            
+              <p class="site-author-name" itemprop="name">ershaoye</p>
+              <p class="site-description motion-element" itemprop="description">二少爷's Blog</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ershaoyelxw" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:411274515@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#外观表现"><span class="nav-number">1.</span> <span class="nav-text">外观表现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优化"><span class="nav-number">2.</span> <span class="nav-text">优化</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+      <div class="music163player">
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="//music.163.com/outchain/player?type=0&id=2045803772&auto=0&height=430"></iframe>
+      </div>
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ershaoye</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

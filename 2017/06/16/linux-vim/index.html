@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Linux," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1、vim ~/.vimrc 进入配置文件 set nu　#行号 set tabstop=2　#一个tab为2个空格长度 set ai #设置自动缩进 syntax on #高亮 2、基本 空格键 向右移动一格 x 删除后面的字符X 删除前一个字符 (删除3个字符就是3x) dd 删除一行D 删除到行尾  caw 改写单词  c相当于d变为编辑模式 J 删除换行符，使下一行并上来。nJ 连接后面的">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vim常用快捷键">
+<meta property="og:url" content="http://yoursite.com/2017/06/16/linux-vim/index.html">
+<meta property="og:site_name" content="二少爷&#39;s Blog">
+<meta property="og:description" content="1、vim ~/.vimrc 进入配置文件 set nu　#行号 set tabstop=2　#一个tab为2个空格长度 set ai #设置自动缩进 syntax on #高亮 2、基本 空格键 向右移动一格 x 删除后面的字符X 删除前一个字符 (删除3个字符就是3x) dd 删除一行D 删除到行尾  caw 改写单词  c相当于d变为编辑模式 J 删除换行符，使下一行并上来。nJ 连接后面的">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-14T02:47:59.367Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vim常用快捷键">
+<meta name="twitter:description" content="1、vim ~/.vimrc 进入配置文件 set nu　#行号 set tabstop=2　#一个tab为2个空格长度 set ai #设置自动缩进 syntax on #高亮 2、基本 空格键 向右移动一格 x 删除后面的字符X 删除前一个字符 (删除3个字符就是3x) dd 删除一行D 删除到行尾  caw 改写单词  c相当于d变为编辑模式 J 删除换行符，使下一行并上来。nJ 连接后面的">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/06/16/linux-vim/"/>
+
+
+
+
+
+  <title>vim常用快捷键 | 二少爷's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">二少爷's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-photos">
+          <a href="/photos/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-picture-o"></i> <br />
+            
+            相册
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/16/linux-vim/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ershaoye">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="二少爷's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">vim常用快捷键</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-16T09:29:49+08:00">
+                2017-06-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>1、vim ~/.vimrc 进入配置文件</p>
+<p>set nu　#行号</p>
+<p>set tabstop=2　#一个tab为2个空格长度</p>
+<p>set ai #设置自动缩进</p>
+<p>syntax on #高亮</p>
+<p>2、基本</p>
+<p>空格键 向右移动一格</p>
+<p>x 删除后面的字符<br>X 删除前一个字符 (删除3个字符就是3x)</p>
+<p>dd 删除一行<br>D 删除到行尾 </p>
+<p>caw 改写单词  c相当于d变为编辑模式</p>
+<p>J 删除换行符，使下一行并上来。<br>nJ 连接后面的n行</p>
+<p>u 撤销上一次操作<br>U 撤销当前行的所有修改<br>ctrl+r 对撤消的撤消</p>
+<p>i 在光标前插入<br>I 在行首插入<br>a 在光标后插入<br>A 在行末插入<br>o 在当前行的下面另起一行，并变为插入模式<br>O 在当前行上面另起一行，变为插入模式</p>
+<p>Ctrl+o 临时变成命令模式（一次而已）</p>
+<p>:e! 放弃更改，然后相当于重新打开</p>
+<p>:help 帮助，可用ZZ退出帮助窗口</p>
+<p>vim中Nyy可以复制光标后的N行。有时我们不容易得出行数，这时可以用做标记的方法来制定复制范围： </p>
+<p>　　1. 在开始行上输入ma作一个标记a </p>
+<p>　　2. 移动到结束行，输入y’a会复制当前行到标记a之间的文本。d’a会删除。 </p>
+<p>或者是v进入可视模式，再13G跳转到相应行，y即可。</p>
+<p>:10,20y    回车即可，相应的删除也是如此     :10,20d     （此方法比上面两种方法更简单）</p>
+<p>:10,20 m 30    把10行到20行的内容，剪切到30行之后</p>
+<p>:10,20 co 30   把10行到20行的内容，复制到30行之后</p>
+<p>将光标放在 { 处，然后输入v%就可以把大括号中内容选定</p>
+<p>如果光标放在第一个s上，想删除到“(”为止，则输入dt(就可以了，t(的作用是跳到下一个”(“前。</p>
+<p>ctrl +n 自动补全 ctrl + p 也一样</p>
+<p>:ab hw hello world  用一个缩写字符串代替一个长的字符串，此处用 hw 代替 hello world</p>
+<p>%: 移动到与制匹配的括号上去（），{}，[]，&lt;&gt;等</p>
+<p>‘ 移动到上一次的修改行</p>
+<p>fx 向右跳到本行字符x处（x可以是任何字符）<br>Fx 向左跳到本行字符x处（x可以是任何字符）<br>tx 和fx相同，区别是跳到字符x前<br>Tx 和Fx相同，区别是跳到字符x后</p>
+<p>到与当前单词相同的上一个单词上， * 到与当前单词相同的下一个单词上</p>
+<p>如果你要重复键入一个短语或一个句子, 也有一种快捷的方法。Vim有一种记录宏的机制。你键入”qa”开始把一段宏记录入寄存器变量<code>a&#39;中。
+按下来你可以象平常一样键入你要的操作, 只是这些操作都会被Vim记录进它命名为</code>a’的宏中, 再次再下”q”键, 就结束了宏`a’的录制。当你要重复执行你刚才记录的那些操作时只要使用”@a”命令。共有26个可用的寄存器供你记录宏。 使用宏你可以重复多个不同的操作。而不仅仅是插入文本了。如果你要进行某种重复的操作, 记着要用这一招呀。</p>
+<p>:abbr hte the</p>
+<p>:abbr hw Hello World</p>
+<p>输入先面的单词时，自动用后面的替换。</p>
+<p>3、移动：</p>
+<p>b、3b、w、3w:向前\后移动几个单词，标点也算一个单词。相应的大写状态为不含标点，即只把空格和换行符作为单词间隔符。</p>
+<p>$：移动到行尾  3$：移动到3行后的行尾</p>
+<p>^:移动到行首，0也是</p>
+<p>+：移到下一行的行首</p>
+<p>-： 移到上一行的行首</p>
+<p>f:搜索命令，小写时向后搜索（用来定位）如 fx：定位到下一个x上。   Fx：定位到上一个x上，重复时，可用;或,  不过 , 表示反方向</p>
+<p>%：跳到相对应的括号上，编程时常用</p>
+<p>33G：跳转到33行   此时按``可以返回到原来行</p>
+<p>gg:文件头   G： 文件尾</p>
+<p>30%：跳转到文件的30%处</p>
+<p>“H”意为Home, “M”为Middle, “L”为Last.  当前屏幕的上中下位置，大小写皆可</p>
+<p>Ctrl+G:显示当前位置</p>
+<p>set number:设置显示行号，set nonumber:关闭显示</p>
+<p>:set ruler 设置在窗口右下角显示行号，与上面的好处是，节省空间</p>
+<p>ctrl+u\d  向上\下滚动半屏</p>
+<p>ctrl+e\y  向上\下滚动一行</p>
+<p>ctrl+b\f  向上\下滚动一屏　　这个比较实用，记住。</p>
+<p>zz:将当前行滚动于屏幕中间，方便查看上下文  zt置顶，zb置尾</p>
+<p>/string  查找string，回车后，按n键可以跳到下一个，N上一个，另外按/键后，按上下键可以找到以前查找的记录，同样的 ：也有记录</p>
+<p>?/string 同上，默认向上查找</p>
+<p>:set ignorecase 大小写无关</p>
+<p>:set noignorecase 大小写敏感</p>
+<ul>
+<li>：查找下一个光标所在单词  #是查找上一个</li>
+</ul>
+<p>:set hlsearch  高亮显示查找结果</p>
+<p>:set nohlsearch  取消高亮</p>
+<p>:nohlsearch  去掉当前显示的高完（一次性）</p>
+<p> `` 上次光标停靠的行</p>
+<p>% 匹配到相应括号处</p>
+<blockquote>
+<blockquote>
+<p>向右移动本行一段距离<br>&lt;&lt; 向左移动本行一段距离<br>3&lt;&lt; 把下面3行（包括本行），向左移动一段距离<br>:20,30&gt;&gt; 把20行到30行向右移动一段距离</p>
+</blockquote>
+</blockquote>
+<p>4、小幅改动：</p>
+<p>:%s/str1/str2/g   替换每一行的 str1为 str2</p>
+<p>:10,20s/str1/str2/g   替换从行10到行20之间的 str1为 str2</p>
+<p>:10,$s/str1/str2/g   替换从行10到最后一行之间的 str1为 str2</p>
+<p>:s/str1/str2/g   替换当前行的 str1为 str2</p>
+<p>.  重复执行命令 </p>
+<p>:10,$ w test2.cpp     取行10到最后一行内容，保存到test2.cpp</p>
+<p>:r class/User.hpp    读取文件中的内容，插入到当前行的后面</p>
+<p>dw:删除一个单词（光标后部分）  不如：daw实用　　　　d4w：删除4个单词　　　　d$:删除当前光标到行尾　　　　d^：删除当前光标至行首   　　　　d换成c效果是一样的，只是操作完会变成insert模式   dnw： 删除N个单词   dnj: 向下删除n行      dnk: 向上删除n行 </p>
+<p>X：删除左边的字符，相当于&lt;-键，x删除当前字符　　D:相当于d$　　C:相当于c$　　s:相当于c1　　S:相当于cc</p>
+<p>r:替换当前字符，但不会进入insert模式　　　　3r:把后面3个字符替换掉　　　　R：替换模式</p>
+<p>.:重复上一次操作</p>
+<p>v：进入Visual模式　　　　V:进入可视行模式，比如 Vjjd 删除3行　　Ctrl+v：可视块模式</p>
+<p>P：粘贴至光标前　　　　p：粘贴至光标后　　　　3P：粘贴3次      “2p     粘贴最后第二次的删除的内容</p>
+<p>yy:复制一行　　yaw： 复制一个单词,光标在单词任意位置    ynw： 复制N个单词       ynj: 向下复制n行          ynk: 向上复制n行  </p>
+<p>自动缩进：</p>
+<p>:set cindent(所有的set都可以简写为se,虽然只节省了一个字符, 译者注) 需要注意的是cindent控制缩进量是通过shiftwidth选项的值, 而不是通过tabstop 的值, shiftwidth的默认值是8(也就是说, 一个缩进为8个空格, 译者注), 要改变默认的设置, 可以使用”:set shiftwidth=x”命令, 其中x是你希望一个缩进量代表的空格的数目.</p>
+<p> { = 到前一个空行上<br>} = 到下一个空行上</p>
+<p> 5、VIM的一些插件：</p>
+<p>c.vim :如果是用root账号的，把文件复制到/usr/share/vim/vim70中解压没有用的，不存在 $HOME/.vim 这个目录，没办法，只能新建个目录，然后把压缩包cp到这个目录，再unzip即可。在 ~/.vimrc 中 写入 filetype plugin on </p>
+<p>:e!   返回上次保存后的状态</p>
+<p>Ctrl+z:暂停vi,回到Unix提示符，再输入fg即可回到vi。</p>
+<p> ^回到行首，光标位于行首字母处；0回到行首，光标位于行首字母前。$回到行尾，光标位于行尾字母处。</p>
+<p>nb:向前移动n个单词，nw：向后移动n个单词。光标位于单词的第一个字母处。 nw这个操作很慢，不知何故。 以空格、标点符号与单词的分界为分隔符。（几个连续的标点视为一个单词）</p>
+<p>同样的，也可以使用nB,nW，只是这里只使用空格做为分隔符。</p>
+<p>相换两个相邻字母的位置：x、p</p>
+<p>s:删除一个字符，并进入编辑模式。 S：删除一整行，进入编辑模式，相当于cc。   ns:删除后面n个字符，并进入编辑模式。</p>
+<p>~:更改字母的大小写，同时光标进入到下一个字符。  n~:把后面n个字母的大小写状态改变。</p>
+<p>dw:删除单词后面部分     db：删除单词前面部分。  如果要删除整个单词(光标位于单词中间的话)，可以 dbw\wdb</p>
+<p>de:类似于dw,删除单词后面的部分（只删除到本单词结尾，dw会删除掉单词后面的空格）   dE:删除的范围包括标号在内的单词结尾。</p>
+<p>e:相当于w，向后移动一个单词。不同的是，w移动到单词第一个字符上，e移动到单词最后一个字符上。  所以ea,可以给本单词追加内容。</p>
+<p>D：d$ 的简写，同样的，C：c$的简写。</p>
+<p>U：会恢复一整行原先的面貌，即最原始的样子。</p>
+<p>Y：相当于yy，不同于D与C的操作方法。</p>
+<p>.：重复上一个命令。</p>
+<p>除了O/o，插入命令(A,a,I,i)接受数值参数，如：5Ihello，然后按ESE键。会在行首输入5个连接的hello</p>
+<p>nr:替换后面n个字符。</p>
+<p>nJ:合并下面的n行（从本行算起）。</p>
+<p>ynl:向后复制n个字符。</p>
+<p>e/E:到单词的结尾。</p>
+<p>滚动整屏：</p>
+<p>^f：向前（下）一整屏</p>
+<p>^b：向后（上）一整屏</p>
+<p>^d：向前（下）一半屏</p>
+<p>^u：向后（上）一半屏</p>
+<p>z,Enter：将光标所在行移动到屏幕顶部（同于zz)</p>
+<p>z.：将光标所在行移动到屏幕中间</p>
+<p>z-：将光标所在行移动到屏幕尾部</p>
+<p>nz,Enter：将第n行移动到屏幕顶部，同样的，z. 与 z- 前也可以加数字。</p>
+<p>在屏幕中移动：</p>
+<p>H、M、L分别移动到屏幕的顶部、中间和尾部。</p>
+<p>nH、nL 移动到距离屏幕顶部和顶部n行的位置。</p>
+<p> Enter：到下一行的第一个字符。</p>
+<p>+：到下一行的第一个字符。</p>
+<p>-：到上一行的第一个字符。</p>
+<p>n|：移动到当前行的第n列</p>
+<p>e：移到单词的结尾</p>
+<p>E：移到单词的结尾（忽略标点符号）</p>
+<p>(   )   {   }  [[  ]] 这几个对编程作用不大，可忽略。</p>
+<p>d/it：向后删除到it之前的位置（不删it）。    d?it：向前删除到it之前的位置（删除it）。</p>
+<p> fx:本行中向右搜索x，光标置于x上。  Fx:向左搜索。; 重复上一个搜索命令，方向相同。   ,重复上一个搜索命令，方向相反。</p>
+<p>tx:同fx，只是光标置于x之前。 Tx类似。</p>
+<p>dfi：向右删除第一个i的位置（包括i)  dti：同dfi，只是不包括i</p>
+<p>Ctrl+G 查看当前行信息</p>
+<p>nG跳转后，可使用``回到上一次的位置，’’功能一样，不过只是回到前次位置所在行的开头，而不是确定的位置上。</p>
+<p>删除包含keyword字符串的行： :g/keyword/d</p>
+<p>删除空行：:%s/^\n$//g</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/03/js-this/" rel="next" title="必须深入理解javascript之this">
+                <i class="fa fa-chevron-left"></i> 必须深入理解javascript之this
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/13/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/images/avatar.png"
+                alt="ershaoye" />
+            
+              <p class="site-author-name" itemprop="name">ershaoye</p>
+              <p class="site-description motion-element" itemprop="description">二少爷's Blog</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ershaoyelxw" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:411274515@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+      <div class="music163player">
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="//music.163.com/outchain/player?type=0&id=2045803772&auto=0&height=430"></iframe>
+      </div>
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ershaoye</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

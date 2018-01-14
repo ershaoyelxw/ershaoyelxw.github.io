@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="html5," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="移动前端开发中添加一些webkit专属的HTML5头部标签，帮助浏览器更好解析HTML代码，更好地将移动web前端页面表现出来。本文整理一些常用的meta标签。 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364">
+<meta name="keywords" content="html5">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动前端头部标签(HTML5 head meta)">
+<meta property="og:url" content="http://yoursite.com/2017/04/03/html5-head-meta/index.html">
+<meta property="og:site_name" content="二少爷&#39;s Blog">
+<meta property="og:description" content="移动前端开发中添加一些webkit专属的HTML5头部标签，帮助浏览器更好解析HTML代码，更好地将移动web前端页面表现出来。本文整理一些常用的meta标签。 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-13T18:13:22.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动前端头部标签(HTML5 head meta)">
+<meta name="twitter:description" content="移动前端开发中添加一些webkit专属的HTML5头部标签，帮助浏览器更好解析HTML代码，更好地将移动web前端页面表现出来。本文整理一些常用的meta标签。 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/04/03/html5-head-meta/"/>
+
+
+
+
+
+  <title>移动前端头部标签(HTML5 head meta) | 二少爷's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">二少爷's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-photos">
+          <a href="/photos/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-picture-o"></i> <br />
+            
+            相册
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/03/html5-head-meta/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ershaoye">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="二少爷's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">移动前端头部标签(HTML5 head meta)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-03T17:35:46+08:00">
+                2017-04-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/html5/" itemprop="url" rel="index">
+                    <span itemprop="name">html5</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>移动前端开发中添加一些webkit专属的HTML5头部标签，帮助浏览器更好解析HTML代码，更好地将移动web前端页面表现出来。本文整理一些常用的meta标签。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt; &lt;!-- 使用 HTML5 doctype，不区分大小写 --&gt;</span><br><span class="line">&lt;html lang=&quot;zh-cmn-Hans&quot;&gt; &lt;!-- 更加标准的 lang 属性写法 http://zhi.hu/XyIa --&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;!-- 声明文档使用的字符编码 --&gt;</span><br><span class="line">    &lt;meta charset=&apos;utf-8&apos;&gt;</span><br><span class="line">    &lt;!-- 优先使用 IE 最新版本和 Chrome --&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;/&gt;</span><br><span class="line">    &lt;!-- 页面描述 --&gt;</span><br><span class="line">    &lt;meta name=&quot;description&quot; content=&quot;不超过150个字符&quot;/&gt;</span><br><span class="line">    &lt;!-- 页面关键词 --&gt;</span><br><span class="line">    &lt;meta name=&quot;keywords&quot; content=&quot;&quot;/&gt;</span><br><span class="line">    &lt;!-- 网页作者 --&gt;</span><br><span class="line">    &lt;meta name=&quot;author&quot; content=&quot;name, email@gmail.com&quot;/&gt;</span><br><span class="line">    &lt;!-- 搜索引擎抓取 --&gt;</span><br><span class="line">    &lt;meta name=&quot;robots&quot; content=&quot;index,follow&quot;/&gt;</span><br><span class="line">    &lt;!-- 为移动设备添加 viewport --&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no&quot;&gt;</span><br><span class="line">    &lt;!-- `width=device-width` 会导致 iPhone 5 添加到主屏后以 WebApp 全屏模式打开页面时出现黑边 http://bigc.at/ios-webapp-viewport-meta.orz --&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0&quot;/&gt;&lt;!-- 手机视图 --&gt;</span><br><span class="line">    &lt;meta content=&quot;telephone=no&quot; name=&quot;format-detection&quot; /&gt;</span><br><span class="line">    &lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;black&quot;&gt;</span><br><span class="line">    &lt;!-- UC默认竖屏 ，UC强制全屏 --&gt;</span><br><span class="line">    &lt;meta name=&quot;full-screen&quot; content=&quot;yes&quot;/&gt;</span><br><span class="line">    &lt;meta name=&quot;browsermode&quot; content=&quot;application&quot;/&gt;</span><br><span class="line">    &lt;!-- QQ强制竖屏 QQ强制全屏 --&gt;</span><br><span class="line">    &lt;meta name=&quot;x5-orientation&quot; content=&quot;portrait&quot;/&gt;</span><br><span class="line">    &lt;meta name=&quot;x5-fullscreen&quot; content=&quot;true&quot;/&gt;</span><br><span class="line">    &lt;meta name=&quot;x5-page-mode&quot; content=&quot;app&quot;/&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- iOS 设备 begin --&gt;</span><br><span class="line">    &lt;meta name=&quot;apple-mobile-web-app-title&quot; content=&quot;标题&quot;&gt;</span><br><span class="line">    &lt;!-- 添加到主屏后的标题（iOS 6 新增） --&gt;</span><br><span class="line">    &lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot;/&gt;</span><br><span class="line">    &lt;!-- 是否启用 WebApp 全屏模式，删除苹果默认的工具栏和菜单栏 --&gt;</span><br><span class="line"></span><br><span class="line">    &lt;meta name=&quot;apple-itunes-app&quot; content=&quot;app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL&quot;&gt;</span><br><span class="line">    &lt;!-- 添加智能 App 广告条 Smart App Banner（iOS 6+ Safari） --&gt;</span><br><span class="line">    &lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;black&quot;/&gt;</span><br><span class="line">    &lt;!-- 设置苹果工具栏颜色 --&gt;</span><br><span class="line">    &lt;meta name=&quot;format-detection&quot; content=&quot;telphone=no, email=no&quot;/&gt;</span><br><span class="line">    &lt;!-- 忽略页面中的数字识别为电话，忽略email识别 --&gt;</span><br><span class="line">    &lt;!-- 启用360浏览器的极速模式(webkit) --&gt;</span><br><span class="line">    &lt;meta name=&quot;renderer&quot; content=&quot;webkit&quot;&gt;</span><br><span class="line">    &lt;!-- 避免IE使用兼容模式 --&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">    &lt;!-- 不让百度转码 --&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;Cache-Control&quot; content=&quot;no-siteapp&quot; /&gt;</span><br><span class="line">    &lt;!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 --&gt;</span><br><span class="line">    &lt;meta name=&quot;HandheldFriendly&quot; content=&quot;true&quot;&gt;</span><br><span class="line">    &lt;!-- 微软的老式浏览器 --&gt;</span><br><span class="line">    &lt;meta name=&quot;MobileOptimized&quot; content=&quot;320&quot;&gt;</span><br><span class="line">    &lt;!-- uc强制竖屏 --&gt;</span><br><span class="line">    &lt;meta name=&quot;screen-orientation&quot; content=&quot;portrait&quot;&gt;</span><br><span class="line">    &lt;!-- QQ强制竖屏 --&gt;</span><br><span class="line">    &lt;meta name=&quot;x5-orientation&quot; content=&quot;portrait&quot;&gt;</span><br><span class="line">    &lt;!-- UC强制全屏 --&gt;</span><br><span class="line">    &lt;meta name=&quot;full-screen&quot; content=&quot;yes&quot;&gt;</span><br><span class="line">    &lt;!-- QQ强制全屏 --&gt;</span><br><span class="line">    &lt;meta name=&quot;x5-fullscreen&quot; content=&quot;true&quot;&gt;</span><br><span class="line">    &lt;!-- UC应用模式 --&gt;</span><br><span class="line">    &lt;meta name=&quot;browsermode&quot; content=&quot;application&quot;&gt;</span><br><span class="line">    &lt;!-- QQ应用模式 --&gt;</span><br><span class="line">    &lt;meta name=&quot;x5-page-mode&quot; content=&quot;app&quot;&gt;</span><br><span class="line">    &lt;!-- windows phone 点击无高光 --&gt;</span><br><span class="line">    &lt;meta name=&quot;msapplication-tap-highlight&quot; content=&quot;no&quot;&gt;</span><br><span class="line">    &lt;!-- iOS 图标 begin --&gt;</span><br><span class="line">    &lt;link rel=&quot;apple-touch-icon-precomposed&quot; href=&quot;/apple-touch-icon-57x57-precomposed.png&quot;/&gt;</span><br><span class="line">    &lt;!-- iPhone 和 iTouch，默认 57x57 像素，必须有 --&gt;</span><br><span class="line">    &lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;114x114&quot; href=&quot;/apple-touch-icon-114x114-precomposed.png&quot;/&gt;</span><br><span class="line">    &lt;!-- Retina iPhone 和 Retina iTouch，114x114 像素，可以没有，但推荐有 --&gt;</span><br><span class="line">    &lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;144x144&quot; href=&quot;/apple-touch-icon-144x144-precomposed.png&quot;/&gt;</span><br><span class="line">    &lt;!-- Retina iPad，144x144 像素，可以没有，但推荐有 --&gt;</span><br><span class="line">    &lt;!-- iOS 图标 end --&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- iOS 启动画面 begin --&gt;</span><br><span class="line">    &lt;link rel=&quot;apple-touch-startup-image&quot; sizes=&quot;768x1004&quot; href=&quot;/splash-screen-768x1004.png&quot;/&gt;</span><br><span class="line">    &lt;!-- iPad 竖屏 768 x 1004（标准分辨率） --&gt;</span><br><span class="line">    &lt;link rel=&quot;apple-touch-startup-image&quot; sizes=&quot;1536x2008&quot; href=&quot;/splash-screen-1536x2008.png&quot;/&gt;</span><br><span class="line">    &lt;!-- iPad 竖屏 1536x2008（Retina） --&gt;</span><br><span class="line">    &lt;link rel=&quot;apple-touch-startup-image&quot; sizes=&quot;1024x748&quot; href=&quot;/Default-Portrait-1024x748.png&quot;/&gt;</span><br><span class="line">    &lt;!-- iPad 横屏 1024x748（标准分辨率） --&gt;</span><br><span class="line">    &lt;link rel=&quot;apple-touch-startup-image&quot; sizes=&quot;2048x1496&quot; href=&quot;/splash-screen-2048x1496.png&quot;/&gt;</span><br><span class="line">    &lt;!-- iPad 横屏 2048x1496（Retina） --&gt;</span><br><span class="line"></span><br><span class="line">    &lt;link rel=&quot;apple-touch-startup-image&quot; href=&quot;/splash-screen-320x480.png&quot;/&gt;</span><br><span class="line">    &lt;!-- iPhone/iPod Touch 竖屏 320x480 (标准分辨率) --&gt;</span><br><span class="line">    &lt;link rel=&quot;apple-touch-startup-image&quot; sizes=&quot;640x960&quot; href=&quot;/splash-screen-640x960.png&quot;/&gt;</span><br><span class="line">    &lt;!-- iPhone/iPod Touch 竖屏 640x960 (Retina) --&gt;</span><br><span class="line">    &lt;link rel=&quot;apple-touch-startup-image&quot; sizes=&quot;640x1136&quot; href=&quot;/splash-screen-640x1136.png&quot;/&gt;</span><br><span class="line">    &lt;!-- iPhone 5/iPod Touch 5 竖屏 640x1136 (Retina) --&gt;</span><br><span class="line">    &lt;!-- iOS 启动画面 end --&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- iOS 设备 end --&gt;</span><br><span class="line">    &lt;meta name=&quot;msapplication-TileColor&quot; content=&quot;#000&quot;/&gt;</span><br><span class="line">    &lt;!-- Windows 8 磁贴颜色 --&gt;</span><br><span class="line">    &lt;meta name=&quot;msapplication-TileImage&quot; content=&quot;icon.png&quot;/&gt;</span><br><span class="line">    &lt;!-- Windows 8 磁贴图标 --&gt;</span><br><span class="line"></span><br><span class="line">    &lt;link rel=&quot;alternate&quot; type=&quot;application/rss+xml&quot; title=&quot;RSS&quot; href=&quot;/rss.xml&quot;/&gt;</span><br><span class="line">    &lt;!-- 添加 RSS 订阅 --&gt;</span><br><span class="line">    &lt;link rel=&quot;shortcut icon&quot; type=&quot;image/ico&quot; href=&quot;/favicon.ico&quot;/&gt;</span><br><span class="line">    &lt;!-- 添加 favicon icon --&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- sns 社交标签 begin --&gt;</span><br><span class="line">    &lt;!-- 参考微博API --&gt;</span><br><span class="line">    &lt;meta property=&quot;og:type&quot; content=&quot;类型&quot; /&gt;</span><br><span class="line">    &lt;meta property=&quot;og:url&quot; content=&quot;URL地址&quot; /&gt;</span><br><span class="line">    &lt;meta property=&quot;og:title&quot; content=&quot;标题&quot; /&gt;</span><br><span class="line">    &lt;meta property=&quot;og:image&quot; content=&quot;图片&quot; /&gt;</span><br><span class="line">    &lt;meta property=&quot;og:description&quot; content=&quot;描述&quot; /&gt;</span><br><span class="line">    &lt;!-- sns 社交标签 end --&gt;</span><br><span class="line"></span><br><span class="line">    &lt;title&gt;标题&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure>
+<p>参考：<a href="http://www.haorooms.com/post/html_meta_ds" target="_blank" rel="noopener">http://www.haorooms.com/post/html_meta_ds</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/html5/" rel="tag"># html5</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/03/css-debug/" rel="next" title="移动前端的一些坑解决方法（外观表现）与优化">
+                <i class="fa fa-chevron-left"></i> 移动前端的一些坑解决方法（外观表现）与优化
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/03/tool-sublime-text/" rel="prev" title="Sublime Text 3 常用插件以及安装方法">
+                Sublime Text 3 常用插件以及安装方法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/images/avatar.png"
+                alt="ershaoye" />
+            
+              <p class="site-author-name" itemprop="name">ershaoye</p>
+              <p class="site-description motion-element" itemprop="description">二少爷's Blog</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ershaoyelxw" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:411274515@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+      <div class="music163player">
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="//music.163.com/outchain/player?type=0&id=2045803772&auto=0&height=430"></iframe>
+      </div>
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ershaoye</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

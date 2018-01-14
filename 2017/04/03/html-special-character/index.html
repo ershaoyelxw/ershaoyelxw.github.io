@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="html5," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="简介：HTML中&amp;lt; 、&amp;gt;、&amp;amp;等有特殊含义（&amp;lt;和&amp;gt;用于链接签，&amp;amp;用于转义），不能直接使用。这些符号是不显示在我们最终看到的网页里的，所以使用的时候我们需要转义。 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545">
+<meta name="keywords" content="html5">
+<meta property="og:type" content="article">
+<meta property="og:title" content="html_special_character">
+<meta property="og:url" content="http://yoursite.com/2017/04/03/html-special-character/index.html">
+<meta property="og:site_name" content="二少爷&#39;s Blog">
+<meta property="og:description" content="简介：HTML中&amp;lt; 、&amp;gt;、&amp;amp;等有特殊含义（&amp;lt;和&amp;gt;用于链接签，&amp;amp;用于转义），不能直接使用。这些符号是不显示在我们最终看到的网页里的，所以使用的时候我们需要转义。 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-13T18:15:46.502Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="html_special_character">
+<meta name="twitter:description" content="简介：HTML中&amp;lt; 、&amp;gt;、&amp;amp;等有特殊含义（&amp;lt;和&amp;gt;用于链接签，&amp;amp;用于转义），不能直接使用。这些符号是不显示在我们最终看到的网页里的，所以使用的时候我们需要转义。 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/04/03/html-special-character/"/>
+
+
+
+
+
+  <title>html_special_character | 二少爷's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">二少爷's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-photos">
+          <a href="/photos/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-picture-o"></i> <br />
+            
+            相册
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/03/html-special-character/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ershaoye">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="二少爷's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">html_special_character</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-03T22:33:03+08:00">
+                2017-04-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/html5/" itemprop="url" rel="index">
+                    <span itemprop="name">html5</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>简介：<br>HTML中&lt; 、&gt;、&amp;等有特殊含义（&lt;和&gt;用于链接签，&amp;用于转义），不能直接使用。这些符号是不显示在我们最终看到的网页里的，所以使用的时候我们需要转义。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br></pre></td><td class="code"><pre><span class="line">特殊符号	命名实体	十进制编码</span><br><span class="line">ζ        &amp;zeta;    &amp;#950;</span><br><span class="line">η        &amp;eta;     &amp;#951;</span><br><span class="line">θ        &amp;theta;   &amp;#952;</span><br><span class="line">ι        &amp;iota;    &amp;#953;</span><br><span class="line">κ        &amp;kappa;   &amp;#954;</span><br><span class="line">λ        &amp;lambda;  &amp;#955;</span><br><span class="line">μ        &amp;mu;      &amp;#956;</span><br><span class="line">ν        &amp;nu;      &amp;#957;</span><br><span class="line">ξ        &amp;xi;      &amp;#958;</span><br><span class="line">ο        &amp;omicron; &amp;#959;</span><br><span class="line">π        &amp;pi;      &amp;#960;</span><br><span class="line">ρ        &amp;rho;     &amp;#961;</span><br><span class="line">ς        &amp;sigmaf;  &amp;#962;</span><br><span class="line">σ        &amp;sigma;   &amp;#963;</span><br><span class="line">τ        &amp;tau;     &amp;#964;</span><br><span class="line">υ        &amp;upsilon; &amp;#965;</span><br><span class="line">φ        &amp;phi;     &amp;#966;</span><br><span class="line">Α        &amp;Alpha;   &amp;#913;</span><br><span class="line">Β        &amp;Beta;    &amp;#914;</span><br><span class="line">Γ        &amp;Gamma;   &amp;#915;</span><br><span class="line">Δ        &amp;Delta;   &amp;#916;</span><br><span class="line">Ε        &amp;Epsilon; &amp;#917;</span><br><span class="line">Ζ        &amp;Zeta;    &amp;#918;</span><br><span class="line">Η        &amp;Eta;     &amp;#919;</span><br><span class="line">Θ        &amp;Theta;   &amp;#920;</span><br><span class="line">Ι        &amp;Iota;    &amp;#921;</span><br><span class="line">Κ        &amp;Kappa;   &amp;#922;</span><br><span class="line">Λ        &amp;Lambda;  &amp;#923;</span><br><span class="line">Μ        &amp;Mu;      &amp;#924;</span><br><span class="line">Ν        &amp;Nu;      &amp;#925;</span><br><span class="line">Ξ        &amp;Xi;      &amp;#926;</span><br><span class="line">Ο        &amp;Omicron;   &amp;#927;</span><br><span class="line">Π        &amp;Pi;        &amp;#928;</span><br><span class="line">Ρ        &amp;Rho;        &amp;#929;</span><br><span class="line">Σ        &amp;Sigma;        &amp;#931;</span><br><span class="line">Τ        &amp;Tau;        &amp;#932;</span><br><span class="line">Υ        &amp;Upsilon;        &amp;#933;</span><br><span class="line">Φ        &amp;Phi;        &amp;#934;</span><br><span class="line">Χ        &amp;Chi;        &amp;#935;</span><br><span class="line">Ψ        &amp;Psi;        &amp;#936;</span><br><span class="line">Ω        &amp;Omega;        &amp;#937;</span><br><span class="line">α        &amp;alpha;        &amp;#945;</span><br><span class="line">β        &amp;beta;        &amp;#946;</span><br><span class="line">γ        &amp;gamma;        &amp;#947;</span><br><span class="line">δ        &amp;delta;        &amp;#948;</span><br><span class="line">ε        &amp;epsilon;        &amp;#949;</span><br><span class="line">χ        &amp;chi;        &amp;#967;</span><br><span class="line">ψ        &amp;psi;        &amp;#968;</span><br><span class="line">ω        &amp;omega;        &amp;#969;</span><br><span class="line">ϑ        &amp;thetasym;        &amp;#977;</span><br><span class="line">ϒ        &amp;upsih;        &amp;#978;</span><br><span class="line">ϖ        &amp;piv;        &amp;#982;</span><br><span class="line">•        &amp;bull;        &amp;#8226;</span><br><span class="line">…        &amp;hellip;        &amp;#8230;</span><br><span class="line">′        &amp;prime;        &amp;#8242;</span><br><span class="line">″        &amp;Prime;        &amp;#8243;</span><br><span class="line">‾        &amp;oline;        &amp;#8254;</span><br><span class="line">⁄        &amp;frasl;        &amp;#8260;</span><br><span class="line">℘        &amp;weierp;        &amp;#8472;</span><br><span class="line">ℑ        &amp;image;        &amp;#8465;</span><br><span class="line">ℜ        &amp;real;        &amp;#8476;</span><br><span class="line">™        &amp;trade;        &amp;#8482;</span><br><span class="line">ℵ        &amp;alefsym;        &amp;#8501;</span><br><span class="line">←        &amp;larr;        &amp;#8592;</span><br><span class="line">↑        &amp;uarr;        &amp;#8593;</span><br><span class="line">→        &amp;rarr;        &amp;#8594;</span><br><span class="line">↓        &amp;darr;        &amp;#8595;</span><br><span class="line">↔        &amp;harr;        &amp;#8596;</span><br><span class="line">↵        &amp;crarr;        &amp;#8629;</span><br><span class="line">⇐        &amp;lArr;        &amp;#8656;</span><br><span class="line">⇑        &amp;uArr;        &amp;#8657;</span><br><span class="line">⇒        &amp;rArr;        &amp;#8658;</span><br><span class="line">⇓        &amp;dArr;        &amp;#8659;</span><br><span class="line">⇔        &amp;hArr;        &amp;#8660;</span><br><span class="line">∀        &amp;forall;        &amp;#8704;</span><br><span class="line">∂        &amp;part;        &amp;#8706;</span><br><span class="line">∃        &amp;exist;        &amp;#8707;</span><br><span class="line">∅        &amp;empty;        &amp;#8709;</span><br><span class="line">∇        &amp;nabla;        &amp;#8711;</span><br><span class="line">∈        &amp;isin;        &amp;#8712;</span><br><span class="line">∉        &amp;notin;        &amp;#8713;</span><br><span class="line">∋        &amp;ni;        &amp;#8715;</span><br><span class="line">∏        &amp;prod;        &amp;#8719;</span><br><span class="line">∑        &amp;sum;        &amp;#8722;</span><br><span class="line">−        &amp;minus;        &amp;#8722;</span><br><span class="line">∗        &amp;lowast;        &amp;#8727;</span><br><span class="line">√        &amp;radic;        &amp;#8730;</span><br><span class="line">∝        &amp;prop;        &amp;#8733;</span><br><span class="line">∞        &amp;infin;        &amp;#8734;</span><br><span class="line">∠        &amp;ang;        &amp;#8736;</span><br><span class="line">∧        &amp;and;        &amp;#8869;</span><br><span class="line">∨        &amp;or;        &amp;#8870;</span><br><span class="line">∩        &amp;cap;        &amp;#8745;</span><br><span class="line">∪        &amp;cup;        &amp;#8746;</span><br><span class="line">∫        &amp;int;        &amp;#8747;</span><br><span class="line">∴        &amp;there4;        &amp;#8756;</span><br><span class="line">∼        &amp;sim;        &amp;#8764;</span><br><span class="line">≅        &amp;cong;        &amp;#8773;</span><br><span class="line">≈        &amp;asymp;        &amp;#8773;</span><br><span class="line">≠        &amp;ne;        &amp;#8800;</span><br><span class="line">≡        &amp;equiv;        &amp;#8801;</span><br><span class="line">≤        &amp;le;        &amp;#8804;</span><br><span class="line">≥        &amp;ge;        &amp;#8805;</span><br><span class="line">⊂        &amp;sub;        &amp;#8834;</span><br><span class="line">⊃        &amp;sup;        &amp;#8835;</span><br><span class="line">⊄        &amp;nsub;        &amp;#8836;</span><br><span class="line">⊆        &amp;sube;        &amp;#8838;</span><br><span class="line">⊇        &amp;supe;        &amp;#8839;</span><br><span class="line">⊕        &amp;oplus;        &amp;#8853;</span><br><span class="line">⊗        &amp;otimes;        &amp;#8855;</span><br><span class="line">⊥        &amp;perp;        &amp;#8869;</span><br><span class="line">⋅        &amp;sdot;        &amp;#8901;</span><br><span class="line">⌈        &amp;lceil;        &amp;#8968;</span><br><span class="line">⌉        &amp;rceil;        &amp;#8969;</span><br><span class="line">⌊        &amp;lfloor;        &amp;#8970;</span><br><span class="line">⌋        &amp;rfloor;        &amp;#8971;</span><br><span class="line">◊        &amp;loz;        &amp;#9674;</span><br><span class="line">♠        &amp;spades;        &amp;#9824;</span><br><span class="line">♣        &amp;clubs;        &amp;#9827;</span><br><span class="line">♥        &amp;hearts;        &amp;#9829;</span><br><span class="line">♦        &amp;diams;        &amp;#9830;</span><br><span class="line">         &amp;nbsp;        &amp;#160;</span><br><span class="line">¡        &amp;iexcl;        &amp;#161;</span><br><span class="line">¢        &amp;cent;        &amp;#162;</span><br><span class="line">£        &amp;pound;        &amp;#163;</span><br><span class="line">¤        &amp;curren;        &amp;#164;</span><br><span class="line">¥        &amp;yen;        &amp;#165;</span><br><span class="line">¦        &amp;brvbar;        &amp;#166;</span><br><span class="line">§        &amp;sect;        &amp;#167;</span><br><span class="line">¨        &amp;uml;        &amp;#168;</span><br><span class="line">©        &amp;copy;        &amp;#169;</span><br><span class="line">ª        &amp;ordf;        &amp;#170;</span><br><span class="line">«        &amp;laquo;        &amp;#171;</span><br><span class="line">¬        &amp;not;        &amp;#172;</span><br><span class="line">&amp;shy;        &amp;#173;</span><br><span class="line">®        &amp;reg;        &amp;#174;</span><br><span class="line">¯        &amp;macr;        &amp;#175;</span><br><span class="line">°        &amp;deg;        &amp;#176;</span><br><span class="line">±        &amp;plusmn;        &amp;#177;</span><br><span class="line">²        &amp;sup2;        &amp;#178;</span><br><span class="line">³        &amp;sup3;        &amp;#179;</span><br><span class="line">´        &amp;acute;        &amp;#180;</span><br><span class="line">µ        &amp;micro;        &amp;#181</span><br><span class="line">“        &amp;quot;        &amp;#34;</span><br><span class="line">&lt;        &amp;lt;        &amp;#60;</span><br><span class="line">&gt;        &amp;gt;        &amp;#62;</span><br><span class="line">‘         	&amp;#39;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/html5/" rel="tag"># html5</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/03/css-ios-for-position-fixed/" rel="next" title="小技巧css解决移动端ios不兼容position:fixed属性">
+                <i class="fa fa-chevron-left"></i> 小技巧css解决移动端ios不兼容position:fixed属性
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/03/third_party_goeasy/" rel="prev" title="如何使用GoEasy实现web实时推送">
+                如何使用GoEasy实现web实时推送 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/images/avatar.png"
+                alt="ershaoye" />
+            
+              <p class="site-author-name" itemprop="name">ershaoye</p>
+              <p class="site-description motion-element" itemprop="description">二少爷's Blog</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ershaoyelxw" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:411274515@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+      <div class="music163player">
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="//music.163.com/outchain/player?type=0&id=2045803772&auto=0&height=430"></iframe>
+      </div>
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ershaoye</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
